@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: manualtest-codegenllamacpp-nov5-model-config
+data:
+  MODEL_ENDPOINT: "http://manualtest-codegenllamacpp-nov5-model-server:8001"
