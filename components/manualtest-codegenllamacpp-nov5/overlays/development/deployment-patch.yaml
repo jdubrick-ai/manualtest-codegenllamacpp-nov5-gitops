@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: manualtest-codegenllamacpp-nov5
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-ai-dev/ai-template-bootstrap-app:latest # use pre-built to bootstrap 
-        name: app-inference 
+        - image: quay.io/jdubrick-ai/manualtest-codegenllamacpp-nov5:b30e0adbb8a27bb7b8ed05c4e7a378b2e7c41cfb@sha256:0c604481e6771b849703e0198a65e110ad9bfac895169d009c7670c2b2f53b0f # use pre-built to bootstrap 
+          name: app-inference
